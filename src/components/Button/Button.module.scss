@@ -1,0 +1,32 @@
+@import '../../shared/colors';
+
+.button {
+
+    display: inline-block;
+
+    background-color: $pink-disabled;
+    color: $white;
+
+    padding: 15px 40px;
+
+    
+    border-radius: 10px;
+
+    transition: backround-color, transform, 0.2s;
+
+    cursor: pointer;
+
+    &:active {
+        background-color: $pink-active;
+        box-shadow: 0 0 5px $black;
+    }
+
+    @media (hover) {
+        &:hover {
+            background-color: $pink-active;
+    
+            transform: translateY(-2px);
+        }
+    }
+}
+
