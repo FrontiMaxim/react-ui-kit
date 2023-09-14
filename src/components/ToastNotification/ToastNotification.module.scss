@@ -1,0 +1,61 @@
+@import '../../shared/colors';
+
+.notification {
+    display: inline-block;
+    position: relative;
+
+    padding: 20px 100px 20px 20px;
+
+    height: auto;
+
+    box-shadow: 0 0 5px rgba($black, 0.5);
+    border-radius: 10px;
+
+    .content {
+        display: inline-block;
+        width: 200px;
+    }
+
+    .cross {
+        
+        position: absolute;
+        transform: scale(0.5);
+
+        left: 290px;
+        top: 0px;
+
+        cursor: pointer;
+
+        fill: rgba($black, 0.7);
+        transition: fill, 0.2s;
+
+        &:hover {
+            fill: rgba($black, 1);
+        }
+    }
+
+}
+
+.success {
+    border-left: 4px solid $green;
+    box-shadow: 0 0 5px $green;
+}
+
+.error {
+
+}
+
+.right_up {
+    float: right;
+    right: 20px;
+    top: 20px;
+}
+
+.right_down {
+    float: right;
+    right: 20px;
+    bottom: -85%;
+}
+
+
+    
