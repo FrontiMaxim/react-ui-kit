@@ -1,61 +1,110 @@
 @import '../../shared/colors';
 
-.notification {
-    display: inline-block;
-    position: relative;
+.notification_container {
+    overflow-x: hidden;
+}
 
-    padding: 20px 100px 20px 20px;
+.notification {
+    position: fixed;
+
+    background-color: $white;
+
+    width: 16%;
+    min-width: 300px;
 
     height: auto;
+    min-height: 30px;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 100;
 
     box-shadow: 0 0 5px rgba($black, 0.5);
     border-radius: 10px;
 
-    .content {
-        display: inline-block;
-        width: 200px;
+    float: right;
+    right: 20px;
+    top: 20px;
+
+    @media screen and (max-width: 375px) {
+        right: 10px;
     }
 
+    overflow: hidden;
+
+    .type_icon {
+        position: absolute;
+
+        left: 12px;
+
+        transform: scale(0.8);
+    }
+
+    .container_text {
+
+        display: inline-block;
+        margin-left: 55px;
+
+        .header {
+            font-weight: 700;            
+        }
+    
+        .content {
+            margin-top: 2px;
+           
+            width: 90%;
+            min-width: 200px;
+            height: auto;
+
+            font-weight: 300;
+            font-size: 14px;
+        }
+    }
+    
     .cross {
         
         position: absolute;
         transform: scale(0.5);
 
-        left: 290px;
-        top: 0px;
-
+        right: 0;
+        top: 1px;
+        
         cursor: pointer;
 
         fill: rgba($black, 0.7);
         transition: fill, 0.2s;
 
-        &:hover {
-            fill: rgba($black, 1);
+        @media(hover) {
+            &:hover {
+                fill: rgba($black, 1);
+            }
         }
+    }
+
+    .progress {
+        position: absolute;
+        bottom: 0;
+        height: 3px;
     }
 
 }
 
 .success {
     border-left: 4px solid $green;
-    box-shadow: 0 0 5px $green;
+
+    .progress {
+        background-color: $green;
+    }
 }
 
 .error {
+    border-left: 4px solid $red;
 
+    .progress {
+        background-color: $red;
+    }
 }
 
-.right_up {
-    float: right;
-    right: 20px;
-    top: 20px;
-}
-
-.right_down {
-    float: right;
-    right: 20px;
-    bottom: -85%;
-}
 
 
     

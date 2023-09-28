@@ -1,15 +1,29 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
 import styles from './App.module.scss';
-import ToastNotification from './components/ToastNotification/ToastNotification';
+import { ToastNotificationContext } from './components/ToastNotification/ToastNotificationProvider';
+import { ModalContext } from './components/Modal/ModalProvider';
 
 const App = () => {
+
+  const { openToastNotification, closeToastNotification } = useContext(ToastNotificationContext);
+  const { openModal, closeModal } = useContext(ModalContext);
+
   return (
     <div className={styles.app}>
-      <ToastNotification 
-        content='Операция прошла успешно freferferf gtrgerherh fregwrtghrwt ghtrwgh fergwerwg grewgwr' 
-        place='right-down'
-      />
+      
+      <button onClick={() => openToastNotification('Операция прошла успешно', 'success', 5000)}>
+        Открыть уведомление
+      </button>
+      <button onClick={() => closeToastNotification()}>
+        Закрыть уведомление
+      </button>
+
+      <button onClick={() => openModal('Привет :)')}>
+        Открыть модальное окно
+      </button>
+      <button onClick={() => closeModal()}>
+        Закрыть модальное окно
+      </button>
     </div>
   );
 }
