@@ -12,23 +12,21 @@ const App = () => {
   return (
     <div className={styles.app}>
       
-      <button onClick={() => openToastNotification('Операция прошла успешно', 'success', 5000)}>
-        Открыть уведомление
-      </button>
-      <button onClick={() => closeToastNotification()}>
-        Закрыть уведомление
-      </button>
-
-      <button onClick={() => openModal('Привет :)')}>
-        Открыть модальное окно
-      </button>
-      <button onClick={() => closeModal()}>
-        Закрыть модальное окно
-      </button>
       <Button 
-        value='Кнопка'
-        isDisabled={false}
+        value=' Открыть уведомление'
+        onClick={() => openToastNotification('Операция прошла успешно', 'success', 5000)}
       />
+      
+      <Button 
+        value='Закрыть уведомление'
+        onClick={() => closeToastNotification()} 
+      />
+        
+      <Button 
+        value='Открыть модальное окно'
+        onClick={() => openModal('Привет :)')}
+      />  
+      
     </div>
   );
 }

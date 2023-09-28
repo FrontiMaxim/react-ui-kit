@@ -2,6 +2,8 @@ import React, { createContext, useState } from "react";
 import styles from './Modal.module.scss';
 import { AnimatePresence, motion } from "framer-motion";
 
+import Cross from '../../shared/assets/cross.svg';
+
 const ModalContext = createContext({});
 
 const ModalProvider = ({ children }) => {
@@ -49,7 +51,14 @@ const ModalProvider = ({ children }) => {
                             content
                         }
                         </motion.div>
-                    
+
+                        <button 
+                            className={styles.btn_close}
+                            onClick={() => closeModal()}
+                        >
+                            <Cross />
+                        </button>
+
                     </motion.div>
                 }
             </AnimatePresence>  
