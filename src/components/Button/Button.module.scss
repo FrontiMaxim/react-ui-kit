@@ -1,0 +1,28 @@
+@import '../../shared/colors';
+
+.button {
+
+    display: inline-block;
+
+    background-color: $pink;
+    color: $white;
+
+    padding: 18px 36px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 1em;
+
+    cursor: pointer;
+
+    &:active {
+        background-color: $pink-light;
+    }
+
+    &:disabled {
+        background-color: $pink-light;
+        cursor: default;
+    }
+}
+

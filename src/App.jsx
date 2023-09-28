@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styles from './App.module.scss';
 import { ToastNotificationContext } from './components/ToastNotification/ToastNotificationProvider';
 import { ModalContext } from './components/Modal/ModalProvider';
+import Button from './components/Button/Button';
 
 const App = () => {
 
@@ -24,6 +25,10 @@ const App = () => {
       <button onClick={() => closeModal()}>
         Закрыть модальное окно
       </button>
+      <Button 
+        value='Кнопка'
+        isDisabled={false}
+      />
     </div>
   );
 }
