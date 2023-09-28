@@ -24,5 +24,11 @@
         background-color: $pink-light;
         cursor: default;
     }
+
+    @media(hover) {
+        &:hover {
+            box-shadow: 0 0 5px rgba($black, 0.6);
+        }
+    }
 }
 
