@@ -4,29 +4,25 @@
 
     display: inline-block;
 
-    background-color: $pink-disabled;
+    background-color: $pink;
     color: $white;
 
-    padding: 15px 40px;
+    padding: 18px 36px;
 
-    
+    border: 0;
     border-radius: 10px;
 
-    transition: backround-color, transform, 0.2s;
+    font-size: 1em;
 
     cursor: pointer;
 
     &:active {
-        background-color: $pink-active;
-        box-shadow: 0 0 5px $black;
+        background-color: $pink-light;
     }
 
-    @media (hover) {
-        &:hover {
-            background-color: $pink-active;
-    
-            transform: translateY(-2px);
-        }
+    &:disabled {
+        background-color: $pink-light;
+        cursor: default;
     }
 }
 
